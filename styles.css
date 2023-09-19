@@ -1,0 +1,359 @@
+@charset "UTF-8";
+
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+/*Desktop view ------------------------------------------------------------------*/
+/* All pages Desktop Pages - This set of CSS applies to each page, for the CSS specific to each page find the comment for that page -----------------------------------------------------------*/
+body {
+  margin: 0 auto;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+header {
+  grid-area: header;
+  padding: 25px 0px 10px 0px;
+}
+header a {
+  text-decoration: none;
+  padding: 0px 25px 0px 25px;
+  color: black;
+}
+h1 {
+  font-weight: 900;
+  padding-bottom: 8px;
+  color: #f1f1f1;
+}
+h2 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin: 25px 15px 0px 15px;
+}
+p {
+  font-weight: 400;
+  font-size: 16px;
+  margin: 15px 15px 25px 15px;
+}
+button {
+  margin: 15px 15px 25px 15px;
+}
+.wrapper {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.hero-button {
+  width: 100px;
+  height: 50px;
+  color: rgba(0, 0, 0, 0.5);
+  background: #f1f1f1;
+  font-size: medium;
+  font-size: 15px;
+  border-radius: 5px;
+  border: none;
+}
+.hero-button:hover {
+  background-color: #f28f9f;
+  box-shadow: 3px 3px 10px 3px #969494;
+  color: #f1f1f1;
+}
+.navigation {
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.navigation a {
+  margin-left: 0px;
+  border-right: thin solid black;
+  font-size: 1rem;
+}
+.navigation a:hover {
+  color: #81d8d0;
+}
+.hero {
+  position: relative;
+  width: 1265px;
+  /* height: 100vh; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 15px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 20px 15px 20px;
+}
+.hero-content {
+  border-radius: 15px;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+}
+
+.pals-logo {
+  margin-top: 5px;
+}
+.hero-main {
+  
+  justify-content: space-around;
+  
+}
+.hero-main-discription {
+  position: absolute;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 280px;
+  z-index: 1;
+}
+.hero-main-text {
+  font-size: 2rem;
+
+  margin: 25px 15px 0px 15px;
+  text-shadow: 3px 3px 10px 3px #969494;
+}
+.hero-main-info {
+  height: fit-content;
+  margin: -5px 5px 5px 5px;
+  padding: 0px;
+}
+.social-links {
+  margin: 5px 5px 5px 5px;
+}
+.hero-social-links a :hover {
+  fill: rgb(242, 206, 174);
+  box-shadow: 3px 3px 10px 3px #969494;
+}
+.hero-sub {
+  border-left: #f1f1f1 1px solid;
+  padding-left: 5px;
+}
+
+.hero-sub-info li {
+  list-style: none;
+}
+/* adopt section */
+.adopt {
+  margin: 0px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 1280px;
+  height: 600px;
+}
+.adopt-header {
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  /* border-left: #969494 1px solid;
+  border-right: #969494 1px solid; */
+  /* margin-bottom: 100px; */
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+.adopt-title {
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.adopt-pets {
+  flex-direction: row;
+  align-items: center;
+}
+/* adopt carousel */
+.card-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  border-left: #969494 1px solid;
+  border-right: #969494 1px solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+/* Adopt cards and wish cards */
+.card {
+  margin: 10px;
+  perspective: 1000px;
+  width: 200px;
+  height: 250px;
+  padding: 10px;
+  perspective: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  border-radius: 15px;
+}
+
+.card-front {
+  background-color: #3498db;
+  color: #fff;
+}
+
+.card-back {
+  background-color: #f1f1f1;
+  color: rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 3px 10px 3px #969494;
+  transform: rotateY(180deg);
+}
+
+.card-description {
+  padding: 20px;
+  text-align: center;
+}
+
+img {
+  width: 200px;
+  max-height: 250px;
+  border-radius: 15px;
+  aspect-ratio: auto;
+}
+/* wish List */
+
+.wish-list-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 20px;
+  justify-content: center;
+  border-left: #969494 1px solid;
+  border-right: #969494 1px solid;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 15px;
+
+}
+.wish-title {
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /* border-left: #969494 1px solid;
+  border-right: #969494 1px solid; */
+  margin: 350px 0px 100px 0px;
+  font-size: 2rem;
+  font-weight: 800;
+}
+.wishlist-main-text {
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+/* donation form */
+form {
+  width: 1200px;
+  
+}
+.form-title {
+  margin: 150px 0px 100px 0px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.form-title-main {
+  font-size: 2rem;
+  font-weight: 800;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+.donateForm {
+  margin-bottom: 50px;
+  width: 1280px;
+  display: flex;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border-radius: 15px;
+  border-left: #969494 1px solid;
+  border-right: #969494 1px solid;
+  justify-content: center;
+  align-content: center;
+}
+
+.donateForm h3 {
+  font-weight: 700;
+  font-size: 1.5rem;
+  /* font-size: 18px; */
+}
+
+.donateForm label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.donateForm input[type="text"],
+.donateForm input[type="email"],
+.donateForm input[type="checkbox"],
+.donateForm input[type="radio"] {
+  width: 100%;
+  padding: 10px;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}
+
+.donateForm .amount label,
+.donateForm .type label {
+  display: inline;
+  margin-right: 10px;
+}
+
+.donateForm .type {
+  grid-column: span 2;
+}
+
+.donateForm .name,
+.donateForm .email {
+  grid-column: span 2;
+}
+
+.donateForm .address2 {
+  grid-column: span 2;
+}
+
+.donateForm .buttons {
+  grid-column: span 2;
+}
+
+.donateForm input[type="reset"],
+.donateForm input[type="submit"] {
+  background-color: #969494;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 25px 0px;
+  margin-right: 10px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.donateForm input[type="reset"]:hover,
+.donateForm input[type="submit"]:hover {
+  background-color: #f28f9f;
+}
+
+.donateForm .payment {
+  grid-column: span 2;
+}
