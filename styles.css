@@ -1,11 +1,16 @@
-@charset "UTF-8";
-
-.flex {
+/* Desktop container utility class: */
+.container {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
-.grid {
-  display: grid;
-}
+
 /*Desktop view ------------------------------------------------------------------*/
 /* All pages Desktop Pages - This set of CSS applies to each page, for the CSS specific to each page find the comment for that page -----------------------------------------------------------*/
 body {
@@ -33,6 +38,7 @@ h2 {
   margin: 25px 15px 0px 15px;
 }
 p {
+  text-align: center;
   font-weight: 400;
   font-size: 16px;
   margin: 15px 15px 25px 15px;
@@ -44,6 +50,7 @@ button {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  width: auto;
 }
 .hero-button {
   width: 100px;
@@ -73,10 +80,8 @@ button {
 .navigation a:hover {
   color: #81d8d0;
 }
-.hero {
-  position: relative;
-  width: 1265px;
-  /* height: 100vh; */
+.hero-section {
+  display: flex;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 15px;
@@ -84,65 +89,76 @@ button {
   align-items: center;
   padding: 15px 20px 15px 20px;
 }
-.hero-content {
+.hero-section-main-links {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  z-index: 1;
+}
+.hero-section-social-links a :hover {
+  fill: rgb(242, 206, 174);
+  box-shadow: 3px 3px 10px 3px #969494;
+}
+.hero-section-content {
   border-radius: 15px;
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
   color: #f1f1f1;
 }
-
-.pals-logo {
-  margin-top: 5px;
+.hero-section-video {
+  width: 100%; /* Set the video width to 100% of its container */
+  height: auto; /* Allow the video's height to adjust proportionally */
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
 }
-.hero-main {
-  
+.hero-section-main {
   justify-content: space-around;
-  
 }
-.hero-main-discription {
-  position: absolute;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 280px;
-  z-index: 1;
-}
-.hero-main-text {
+.hero-section-main-text {
   font-size: 2rem;
-
   margin: 25px 15px 0px 15px;
   text-shadow: 3px 3px 10px 3px #969494;
-}
-.hero-main-info {
-  height: fit-content;
-  margin: -5px 5px 5px 5px;
-  padding: 0px;
 }
 .social-links {
   margin: 5px 5px 5px 5px;
 }
-.hero-social-links a :hover {
-  fill: rgb(242, 206, 174);
-  box-shadow: 3px 3px 10px 3px #969494;
+.hero-section-main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: -5px 5px 5px 5px;
+  padding: 0px;
+  width: 100%;
 }
-.hero-sub {
-  border-left: #f1f1f1 1px solid;
-  padding-left: 5px;
+.hero-section-sub-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: first baseline;
+  padding-left: 0px;
 }
-
-.hero-sub-info li {
+.hero-section-sub-info li {
   list-style: none;
 }
+
 /* adopt section */
-.adopt {
+/* .adopt {
+  text-align: center;
+  padding: 20px;
   margin: 0px 0px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   width: 1280px;
   height: 600px;
-}
-.adopt-header {
-  justify-content: space-between;
+} */
+.adopt-section-header {
+  display: flex;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   /* border-left: #969494 1px solid;
@@ -157,15 +173,22 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
+.adopt-title img {
+  width: 80px;
+}
 .adopt-pets {
   flex-direction: row;
   align-items: center;
 }
 /* adopt carousel */
+/* Default card styles (for all screen sizes) */
 .card-container {
   display: flex;
-  flex-direction: row;
-  justify-content: center;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  /* padding: 40px; */
+  grid-gap: 22px;
+   justify-content: center;
   align-items: center;
   border-radius: 15px;
   border-left: #969494 1px solid;
@@ -173,18 +196,27 @@ button {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
+
 /* Adopt cards and wish cards */
 .card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 300px;
   margin: 10px;
   perspective: 1000px;
-  width: 200px;
-  height: 250px;
   padding: 10px;
-  perspective: 1000px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
 }
+.pet-img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
 .card-inner {
   width: 100%;
   height: 100%;
@@ -212,6 +244,8 @@ button {
 .card-front {
   background-color: #3498db;
   color: #fff;
+  background-size: cover; /* Ensure the image covers the entire card */
+  background-position: center; /* Center the background image */
 }
 
 .card-back {
@@ -222,40 +256,70 @@ button {
 }
 
 .card-description {
-  padding: 20px;
+  margin-top: 10px;
+  font-size: 0.9rem;
   text-align: center;
 }
 
+.wishlist-image {
+  max-width: 100%;
+  min-width: 150px; /* Ensure images don't exceed their container width */
+  height: 100%; /* Maintain image aspect ratio */
+  border-radius: 15px;
+  aspect-ratio: auto;
+}
 img {
-  width: 200px;
-  max-height: 250px;
+  max-width: 100%;
+  max-height: 100%; /* Ensure images don't exceed their container width */
+  height: 100%; /* Maintain image aspect ratio */
   border-radius: 15px;
   aspect-ratio: auto;
 }
 /* wish List */
 
-.wish-list-container {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 20px;
+.wish-section-card {
+  display: flex;
+  align-items: center;
   justify-content: center;
-  border-left: #969494 1px solid;
-  border-right: #969494 1px solid;
+  height: 300px;
+  padding: 10px;
+  perspective: 1000px;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+
+}
+.wish-section-header ~ .container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 2rem;
+  padding: 15px;
+  /* width: 1050px; */
+  align-items: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   background-color: #fff;
   border-radius: 15px;
-
 }
-.wish-title {
+.wishlist-card-container .card img {
+  max-width: 100%;
+  min-width: 250px; /* Ensure images don't exceed their container width */
+  height: 100%; /* Maintain image aspect ratio */
+  border-radius: 15px;
+  aspect-ratio: auto;
+}
+.wish-section-header {
+  display: flex;
   justify-content: center;
+ 
   align-items: center;
   flex-direction: column;
-  /* border-left: #969494 1px solid;
-  border-right: #969494 1px solid; */
-  margin: 350px 0px 100px 0px;
+  margin: 150px 0px 100px 0px;
   font-size: 2rem;
   font-weight: 800;
 }
+
 .wishlist-main-text {
   font-size: 2rem;
   font-weight: 800;
@@ -266,9 +330,9 @@ img {
 /* donation form */
 form {
   width: 1200px;
-  
 }
-.form-title {
+.form-section-header {
+  display: flex;
   margin: 150px 0px 100px 0px;
   flex-direction: column;
   justify-content: center;
@@ -356,4 +420,131 @@ form {
 
 .donateForm .payment {
   grid-column: span 2;
+}
+/* The desktop-first pre-defined media queries: */
+/* 2xl */
+@media (max-width: 1536px) {
+}
+
+/* xl */
+@media (max-width: 1280px) {
+}
+
+/* lg */
+@media (max-width: 1024px) {
+}
+
+/* md */
+@media (max-width: 768px) {
+}
+
+/* sm */
+@media (max-width: 640px) {
+}
+
+/* xs */
+@media (max-width: 475px) {
+}
+
+/* Mobile container utility class: */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* xs */
+@media (min-width: 475px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* sm */
+@media (min-width: 640px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* md */
+@media (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* lg */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* xl */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* 2xl */
+@media (min-width: 1536px) {
+  .container {
+    max-width: 1536px;
+  }
+}
+
+/* Desktop container utility class: */
+.container {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+/* 2xl */
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+}
+
+/* lg */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+}
+
+/* md */
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 100%;
+  }
+
 }
