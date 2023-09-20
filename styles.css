@@ -28,11 +28,13 @@ header a {
   color: black;
 }
 h1 {
+  text-align: center;
   font-weight: 900;
   padding-bottom: 8px;
   color: #f1f1f1;
 }
 h2 {
+  text-align: center;
   font-weight: 700;
   font-size: 1.5rem;
   margin: 25px 15px 0px 15px;
