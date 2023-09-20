@@ -145,25 +145,12 @@ button {
   list-style: none;
 }
 
-/* adopt section */
-/* .adopt {
-  text-align: center;
-  padding: 20px;
-  margin: 0px 0px;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 1280px;
-  height: 600px;
-} */
+
 .adopt-section-header {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  /* border-left: #969494 1px solid;
-  border-right: #969494 1px solid; */
-  /* margin-bottom: 100px; */
   margin-top: 150px;
   margin-bottom: 100px;
 }
